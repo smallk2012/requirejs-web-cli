@@ -1,0 +1,37 @@
+{
+  "name": "yzqd",
+  "version": "0.0.1",
+  "description": "yingzaiqidian.cn",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.12.5",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cache": "^0.4.4",
+    "gulp-clean": "^0.3.2",
+    "gulp-clean-css": "^2.0.11",
+    "gulp-concat": "^2.6.0",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-less": "^3.1.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-sourcemaps": "^2.0.0-alpha",
+    "gulp-uglify": "^1.5.3",
+    "gulp-webpack": "^1.5.0",
+    "path": "^0.12.7"
+  },
+  "scripts": {
+    "test": "hello gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "no"
+  },
+  "author": "cC",
+  "license": "MIT"
+}

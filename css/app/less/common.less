@@ -1,0 +1,169 @@
+/* 超小屏幕（手机，小于 768px） */
+
+@dev-xs-min : 320px;
+@dev-xs-max : 767px;
+
+/* 小屏幕（平板，大于等于 768px） */
+
+@dev-sm-min : 768px;
+@dev-sm-max : 991px;
+
+/* 中等屏幕（桌面显示器，大于等于 992px） */
+
+@dev-md-min : 992px;
+@dev-md-max : 1199px;
+
+/* 大屏幕（大桌面显示器，大于等于 1200px） */
+
+@dev-lg-min : 1200px;
+@dev-lg-max : 1279px;
+
+/* 超大屏幕（大桌面显示器，大于等于 1280px） */
+
+@dev-xl-min : 1280px;
+@dev-xl-max : 1920px;
+
+/**
+     * 默认字体
+ */
+
+@dev-font-default: "PingFang SC",
+"Microsoft YaHei",
+"Helvetica Neue",
+Helvetica,
+Arial,
+"Hiragino Sans GB",
+"Hiragino Sans GB W3",
+"Microsoft YaHei UI",
+"WenQuanYi Micro Hei",
+sans-serif;
+/**
+     * 焦点色
+ */
+
+@dev-color-active: #3583F8;
+
+@padding-lr-pc: 90px;
+@padding-lr-phone: 15px;
+
+/**
+     * 解决苹果和win字体问题
+     * 使用PingFangSC-Medium字体的地方 统一class加标签font-ios;
+     * 在head判断是苹果系统再读一次app-ios.css进行覆盖
+     * win使用加粗  ios按照设计走
+     * 
+ */
+.font-ios{
+    font-weight: bold; 
+}
+/*
+.font-ios{
+    font-family: PingFangSC-Medium , @dev-font-default;
+    font-weight: normal;
+}
+/**
+     * 由于jq拿宽和css里媒体查询有滚动条的时候 宽度不一致
+     * 加个标签是否可见来判断手机还是pc版
+*/
+#ispc{
+    display: block;
+    font-size: 0;
+    line-height: none;
+    @media (max-width: @dev-sm-max) {
+        display: none;
+    }
+}
+/**
+     * 做百分比布局，清除bootstrap分屏效果
+ */
+.container {
+    padding: 0px @padding-lr-pc;
+    width: 100%;
+    min-width: @dev-xs-min;
+    max-width: @dev-xl-min + @padding-lr-pc + @padding-lr-pc;
+    @media (max-width: @dev-sm-max) {
+        padding: 0px @padding-lr-phone;
+    }
+}
+
+
+/**
+     * 对bootstrap进行修正，提高接近设计的还原度
+ */
+
+.row {
+    margin: 0;
+    >[class*="col-"] {
+        padding: 0;
+    }
+}
+
+html,
+body {
+    position: relative;
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    font-family: @dev-font-default;
+}
+
+body {
+    max-width: @dev-xl-max;
+}
+a:link, 
+a:visited ,
+a:hover,
+a:active{
+    text-decoration: none;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+/*
+ * 统一动画时间
+ */
+.global-ani {
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+/**
+     * 左右对齐
+ */
+.global-textjustify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+/**
+     * 文字不可选
+ */
+.global-textnosel {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/**
+     * 通用上下左右居中
+ */
+
+.table {
+    display: table;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    .table-cell {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+p{
+    margin-bottom: 0;
+}
